@@ -22,14 +22,34 @@ function resizeCanvas() {
   dots = [];
 
   for (let i = 0; i < dotCount; i++) {
+    const edgeBias = Math.random() < 0.78;
+    const x = edgeBias ? getEdgePosition(canvas.width) : Math.random() * canvas.width;
+    const y = edgeBias ? getEdgePosition(canvas.height) : Math.random() * canvas.height;
+
     dots.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: x,
+      y: y,
       size: Math.random() * 3.2 + 1.6,
       speedX: Math.random() * 0.32 - 0.16,
       speedY: Math.random() * 0.32 - 0.16
     });
   }
+}
+
+function getEdgePosition(length) {
+  const fromStart = Math.random() < 0.5;
+  const edgeDepth = Math.pow(Math.random(), 1.8) * length * 0.38;
+  return fromStart ? edgeDepth : length - edgeDepth;
+}
+
+function getCornerVisibility(dot) {
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const distanceFromCenter = Math.hypot(dot.x - centerX, dot.y - centerY);
+  const maxDistance = Math.hypot(centerX, centerY);
+  const distanceRatio = distanceFromCenter / maxDistance;
+
+  return Math.max(0.05, Math.min(1, Math.pow(distanceRatio, 2.2)));
 }
 
 function drawCanvas() {
@@ -53,16 +73,20 @@ function drawCanvas() {
       dot.speedY *= -1;
     }
 
+    const dotVisibility = getCornerVisibility(dot);
+    context.globalAlpha = dotVisibility;
     context.beginPath();
     context.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
     context.fill();
+    context.globalAlpha = 1;
 
     for (let i = index + 1; i < dots.length; i++) {
       const otherDot = dots[i];
       const distance = Math.hypot(dot.x - otherDot.x, dot.y - otherDot.y);
 
       if (distance < 155) {
-        context.globalAlpha = 1 - distance / 155;
+        const lineVisibility = Math.min(dotVisibility, getCornerVisibility(otherDot));
+        context.globalAlpha = (1 - distance / 155) * lineVisibility;
         context.beginPath();
         context.moveTo(dot.x, dot.y);
         context.lineTo(otherDot.x, otherDot.y);
