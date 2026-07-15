@@ -5,23 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Sebastian Hultman Portfolio</title>
   <!-- Update the query string when CSS changes so GitHub Pages/Chrome do not serve an old cached file. -->
-  <link rel="stylesheet" href="styles.css?v=docs-pass">
+  <link rel="stylesheet" href="styles.css?v=shared-layout">
 </head>
 <body>
   <!-- Decorative animated background. It is hidden from screen readers and controlled from script.js. -->
   <canvas id="background-canvas" aria-hidden="true"></canvas>
 
-  <!-- Shared site header. Keep this markup in sync with index.html until the site uses templates. -->
-  <header>
-    <nav>
-      <a class="logo" href="index.html">Sebastian Hultman</a>
-      <ul>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <button id="theme-toggle" type="button">Dark mode</button>
-    </nav>
-  </header>
+  <!-- Shared header is rendered from script.js so all pages use one navigation source. -->
+  <div id="site-header"></div>
 
   <main>
     <!-- Contact is intentionally its own page, but uses the same grid rhythm as the home hero. -->
@@ -45,12 +36,10 @@
     </section>
   </main>
 
-  <!-- Shared footer. Keep this markup in sync with index.html until the site uses templates. -->
-  <footer>
-    <p>&copy; 2026 Sebastian Hultman</p>
-  </footer>
+  <!-- Shared footer is rendered from script.js for the same reason as the header. -->
+  <div id="site-footer"></div>
 
   <!-- Update the query string when JavaScript changes for the same cache reason as the CSS link. -->
-  <script src="script.js?v=docs-pass"></script>
+  <script src="script.js?v=shared-layout"></script>
 </body>
 </html>

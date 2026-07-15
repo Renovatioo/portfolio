@@ -1,9 +1,45 @@
-const themeButton = document.getElementById('theme-toggle');
+const sharedHeader = `
+  <header>
+    <nav>
+      <a class="logo" href="index.html">Sebastian Hultman</a>
+      <ul>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" type="button">Dark mode</button>
+    </nav>
+  </header>
+`;
+
+const sharedFooter = `
+  <footer>
+    <p>&copy; 2026 Sebastian Hultman</p>
+  </footer>
+`;
+
 const canvas = document.getElementById('background-canvas');
 const context = canvas.getContext('2d');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let dots = [];
 let animationId;
+
+// Render shared page parts from one source so new pages only need the placeholders.
+function renderSharedLayout() {
+  const headerTarget = document.getElementById('site-header');
+  const footerTarget = document.getElementById('site-footer');
+
+  if (headerTarget) {
+    headerTarget.innerHTML = sharedHeader;
+  }
+
+  if (footerTarget) {
+    footerTarget.innerHTML = sharedFooter;
+  }
+}
+
+renderSharedLayout();
+
+const themeButton = document.getElementById('theme-toggle');
 
 // Toggle only the body class; CSS variables handle the actual color changes.
 function setTheme(isDark) {
