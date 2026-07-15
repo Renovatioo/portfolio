@@ -148,6 +148,10 @@ button:hover,
   padding: 56px 0;
 }
 
+.contact-page {
+  padding-bottom: 72px;
+}
+
 .hero h1,
 .contact-page h1 {
   max-width: 720px;
