@@ -140,12 +140,19 @@ button:hover,
 .contact-page {
   width: min(1100px, 92%);
   margin: 0 auto;
-  min-height: 70vh;
   display: grid;
   grid-template-columns: 1fr 0.8fr;
   align-items: center;
   gap: 48px;
   padding: 56px 0;
+}
+
+.hero {
+  min-height: 70vh;
+}
+
+.contact-page {
+  padding: 48px 0 32px;
 }
 
 .hero h1,
