@@ -45,10 +45,20 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(45, 125, 143, 0.16), transparent 36%),
-    linear-gradient(300deg, rgba(143, 207, 159, 0.2), transparent 44%);
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.58), transparent 32%),
+    linear-gradient(90deg, rgba(45, 125, 143, 0.24), transparent 24%, transparent 76%, rgba(45, 125, 143, 0.24)),
+    linear-gradient(120deg, rgba(45, 125, 143, 0.19), transparent 38%),
+    linear-gradient(300deg, rgba(143, 207, 159, 0.24), transparent 46%);
   pointer-events: none;
   z-index: -2;
+}
+
+body.dark::before {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(90deg, rgba(45, 125, 143, 0.22), transparent 24%, transparent 76%, rgba(45, 125, 143, 0.22)),
+    linear-gradient(120deg, rgba(143, 207, 159, 0.12), transparent 38%),
+    linear-gradient(300deg, rgba(45, 125, 143, 0.16), transparent 46%);
 }
 
 header {
