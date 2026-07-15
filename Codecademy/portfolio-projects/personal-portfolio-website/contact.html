@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Sebastian Hultman Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=stable-shared-layout">
+  <!-- Update the query string when CSS changes so GitHub Pages/Chrome do not serve an old cached file. -->
+  <link rel="stylesheet" href="styles.css?v=docs-pass">
 </head>
 <body>
+  <!-- Decorative animated background. It is hidden from screen readers and controlled from script.js. -->
   <canvas id="background-canvas" aria-hidden="true"></canvas>
 
+  <!-- Shared site header. Keep this markup in sync with index.html until the site uses templates. -->
   <header>
     <nav>
       <a class="logo" href="index.html">Sebastian Hultman</a>
@@ -21,6 +24,7 @@
   </header>
 
   <main>
+    <!-- Contact is intentionally its own page, but uses the same grid rhythm as the home hero. -->
     <section class="contact-page">
       <div>
         <p class="eyebrow">Contact</p>
@@ -41,10 +45,12 @@
     </section>
   </main>
 
+  <!-- Shared footer. Keep this markup in sync with index.html until the site uses templates. -->
   <footer>
     <p>&copy; 2026 Sebastian Hultman</p>
   </footer>
 
-  <script src="script.js?v=stable-shared-layout"></script>
+  <!-- Update the query string when JavaScript changes for the same cache reason as the CSS link. -->
+  <script src="script.js?v=docs-pass"></script>
 </body>
 </html>

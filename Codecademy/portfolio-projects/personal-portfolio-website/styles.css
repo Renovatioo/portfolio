@@ -1,4 +1,5 @@
 :root {
+  /* Site theme tokens. Change colors here before touching individual components. */
   --background: #f7f5ef;
   --surface: #ffffff;
   --text: #1d252c;
@@ -9,6 +10,7 @@
 }
 
 body.dark {
+  /* Dark mode uses the same variable names so components do not need separate dark styles. */
   --background: #182025;
   --surface: #232d33;
   --text: #f4f0e8;
@@ -23,6 +25,7 @@ body.dark {
 }
 
 html {
+  /* Prevents the centered header from shifting when switching between pages with/without scrollbars. */
   scrollbar-gutter: stable;
 }
 
@@ -36,6 +39,7 @@ body {
 }
 
 #background-canvas {
+  /* Canvas sits behind every section and never captures mouse/keyboard interaction. */
   position: fixed;
   inset: 0;
   width: 100%;
@@ -45,6 +49,7 @@ body {
 }
 
 body::before {
+  /* Static color wash behind the animated canvas. Corners carry more color; center stays calm for text. */
   content: "";
   position: fixed;
   inset: 0;
@@ -74,6 +79,7 @@ body.dark::before {
 }
 
 header {
+  /* Header remains visible during scroll and is shared by all pages. */
   background: var(--surface);
   border-bottom: 1px solid var(--line);
   position: sticky;
@@ -142,6 +148,7 @@ button:hover,
 
 .hero,
 .contact-page {
+  /* Reusable two-column page intro layout. Home and contact customize height separately below. */
   width: min(1100px, 92%);
   margin: 0 auto;
   display: grid;
@@ -152,10 +159,12 @@ button:hover,
 }
 
 .hero {
+  /* Home page hero should feel spacious. Contact is shorter and defined separately. */
   min-height: 70vh;
 }
 
 .contact-page {
+  /* Keeps the contact page from creating a large empty band above or below the footer. */
   min-height: calc(100vh - 180px);
   padding: 56px 0 72px;
 }
@@ -191,6 +200,7 @@ button:hover,
 }
 
 .contact-card .profile-photo {
+  /* Crop the real profile image consistently without editing the source photo. */
   aspect-ratio: 1;
   border: 4px solid var(--surface);
   border-radius: 8px;
@@ -227,6 +237,7 @@ button:hover,
 }
 
 .projects {
+  /* Bottom padding is part of the project section, not the footer. */
   padding: 32px 0 72px;
 }
 
@@ -293,6 +304,7 @@ footer {
 }
 
 @media (max-width: 800px) {
+  /* Tablet/mobile: stack the two-column layouts and let content define height. */
   nav,
   nav ul {
     flex-wrap: wrap;
@@ -330,6 +342,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Respect users who prefer less motion; script.js also stops the canvas animation. */
   *,
   *::before,
   *::after {

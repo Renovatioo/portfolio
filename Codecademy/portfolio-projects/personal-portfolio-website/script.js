@@ -5,6 +5,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let dots = [];
 let animationId;
 
+// Toggle only the body class; CSS variables handle the actual color changes.
 function setTheme(isDark) {
   document.body.classList.toggle('dark', isDark);
   themeButton.textContent = isDark ? 'Light mode' : 'Dark mode';
@@ -18,6 +19,7 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  // Most dots start near an edge so the center remains readable.
   const dotCount = Math.min(105, Math.floor(canvas.width / 13));
   dots = [];
 
@@ -36,12 +38,14 @@ function resizeCanvas() {
   }
 }
 
+// Bias a coordinate toward either side of the screen.
 function getEdgePosition(length) {
   const fromStart = Math.random() < 0.5;
   const edgeDepth = Math.pow(Math.random(), 1.65) * length * 0.46;
   return fromStart ? edgeDepth : length - edgeDepth;
 }
 
+// Dots and lines fade near the center so the animation frames the content instead of covering it.
 function getCornerVisibility(dot) {
   const centerX = canvas.width / 2;
   const centerY = canvas.height / 2;
@@ -103,6 +107,7 @@ function startCanvas() {
   cancelAnimationFrame(animationId);
   resizeCanvas();
 
+  // If reduced motion is requested, draw the static gradient only and skip animation.
   if (!reduceMotion.matches) {
     drawCanvas();
   }

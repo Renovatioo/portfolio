@@ -1,9 +1,0 @@
-<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
-  <title id="title">Profile illustration</title>
-  <rect width="420" height="420" rx="24" fill="#dfe9df"/>
-  <circle cx="210" cy="148" r="70" fill="#2d7d8f"/>
-  <path d="M92 358c18-78 70-122 118-122s100 44 118 122" fill="#ffffff"/>
-  <circle cx="184" cy="138" r="9" fill="#1d252c"/>
-  <circle cx="236" cy="138" r="9" fill="#1d252c"/>
-  <path d="M182 174c18 16 38 16 56 0" fill="none" stroke="#1d252c" stroke-width="8" stroke-linecap="round"/>
-</svg>
