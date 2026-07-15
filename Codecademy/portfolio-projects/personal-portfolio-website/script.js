@@ -18,16 +18,16 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  const dotCount = Math.min(70, Math.floor(canvas.width / 18));
+  const dotCount = Math.min(90, Math.floor(canvas.width / 15));
   dots = [];
 
   for (let i = 0; i < dotCount; i++) {
     dots.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 1,
-      speedX: Math.random() * 0.4 - 0.2,
-      speedY: Math.random() * 0.4 - 0.2
+      size: Math.random() * 2.8 + 1.4,
+      speedX: Math.random() * 0.34 - 0.17,
+      speedY: Math.random() * 0.34 - 0.17
     });
   }
 }
@@ -35,8 +35,11 @@ function resizeCanvas() {
 function drawCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   const darkMode = document.body.classList.contains('dark');
-  context.fillStyle = darkMode ? 'rgba(143, 207, 159, 0.35)' : 'rgba(45, 125, 143, 0.22)';
-  context.strokeStyle = darkMode ? 'rgba(184, 223, 193, 0.12)' : 'rgba(31, 95, 110, 0.1)';
+  context.fillStyle = darkMode ? 'rgba(143, 207, 159, 0.5)' : 'rgba(45, 125, 143, 0.34)';
+  context.strokeStyle = darkMode ? 'rgba(184, 223, 193, 0.22)' : 'rgba(31, 95, 110, 0.18)';
+  context.lineWidth = 1.2;
+  context.shadowBlur = darkMode ? 8 : 6;
+  context.shadowColor = darkMode ? 'rgba(143, 207, 159, 0.32)' : 'rgba(45, 125, 143, 0.22)';
 
   dots.forEach(function (dot, index) {
     dot.x += dot.speedX;
@@ -58,8 +61,8 @@ function drawCanvas() {
       const otherDot = dots[i];
       const distance = Math.hypot(dot.x - otherDot.x, dot.y - otherDot.y);
 
-      if (distance < 120) {
-        context.globalAlpha = 1 - distance / 120;
+      if (distance < 145) {
+        context.globalAlpha = 1 - distance / 145;
         context.beginPath();
         context.moveTo(dot.x, dot.y);
         context.lineTo(otherDot.x, otherDot.y);

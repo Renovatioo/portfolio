@@ -45,8 +45,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(45, 125, 143, 0.12), transparent 34%),
-    linear-gradient(300deg, rgba(143, 207, 159, 0.16), transparent 42%);
+    linear-gradient(120deg, rgba(45, 125, 143, 0.16), transparent 36%),
+    linear-gradient(300deg, rgba(143, 207, 159, 0.2), transparent 44%);
   pointer-events: none;
   z-index: -2;
 }
