@@ -178,6 +178,17 @@ button:hover,
   transition: transform 0.3s ease;
 }
 
+.contact-card .profile-photo {
+  aspect-ratio: 1;
+  border: 4px solid var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(29, 37, 44, 0.18);
+  display: block;
+  max-width: 320px;
+  object-fit: cover;
+  object-position: 66% 34%;
+}
+
 .hero img:hover,
 .contact-card img:hover {
   transform: translateY(-6px) rotate(1deg);
