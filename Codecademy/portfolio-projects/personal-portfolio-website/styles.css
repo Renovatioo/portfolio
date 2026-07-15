@@ -132,9 +132,27 @@ button:hover,
   max-width: 420px;
 }
 
+.about,
 .projects {
   width: min(1100px, 92%);
   margin: 0 auto;
+}
+
+.about {
+  padding: 12px 0 48px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin: 0 0 16px;
+}
+
+.about p {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.projects {
   padding: 32px 0 72px;
 }
 
