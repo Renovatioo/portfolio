@@ -38,7 +38,7 @@ function resizeCanvas() {
 
 function getEdgePosition(length) {
   const fromStart = Math.random() < 0.5;
-  const edgeDepth = Math.pow(Math.random(), 1.8) * length * 0.38;
+  const edgeDepth = Math.pow(Math.random(), 1.65) * length * 0.46;
   return fromStart ? edgeDepth : length - edgeDepth;
 }
 
@@ -49,7 +49,7 @@ function getCornerVisibility(dot) {
   const maxDistance = Math.hypot(centerX, centerY);
   const distanceRatio = distanceFromCenter / maxDistance;
 
-  return Math.max(0.05, Math.min(1, Math.pow(distanceRatio, 2.2)));
+  return Math.max(0.06, Math.min(1, Math.pow(distanceRatio, 1.75)));
 }
 
 function drawCanvas() {
