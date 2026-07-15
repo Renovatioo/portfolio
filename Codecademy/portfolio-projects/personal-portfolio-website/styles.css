@@ -28,11 +28,35 @@ body {
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#background-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(45, 125, 143, 0.12), transparent 34%),
+    linear-gradient(300deg, rgba(143, 207, 159, 0.16), transparent 42%);
+  pointer-events: none;
+  z-index: -2;
 }
 
 header {
   background: var(--surface);
   border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav {
@@ -85,11 +109,13 @@ button,
   font-weight: bold;
   padding: 10px 16px;
   text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 button:hover,
 .button:hover {
   background: var(--accent-dark);
+  transform: translateY(-2px);
 }
 
 .hero,
@@ -130,6 +156,13 @@ button:hover,
 .contact-card img {
   width: 100%;
   max-width: 420px;
+  filter: drop-shadow(0 18px 24px rgba(29, 37, 44, 0.16));
+  transition: transform 0.3s ease;
+}
+
+.hero img:hover,
+.contact-card img:hover {
+  transform: translateY(-6px) rotate(1deg);
 }
 
 .about,
@@ -173,6 +206,13 @@ button:hover,
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.project-card:hover,
+.contact-card:hover {
+  box-shadow: 0 16px 32px rgba(29, 37, 44, 0.14);
+  transform: translateY(-6px);
 }
 
 .project-card div,
@@ -183,6 +223,11 @@ button:hover,
 .project-card img {
   width: 100%;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.04);
 }
 
 .project-card h3,
@@ -240,5 +285,23 @@ footer {
   .button {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .hero img:hover,
+  .contact-card img:hover,
+  .project-card:hover,
+  .project-card:hover img,
+  button:hover,
+  .button:hover {
+    transform: none;
   }
 }
