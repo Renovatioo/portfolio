@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renovatioo Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="index.html">Renovatioo</a>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" type="button">Dark mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Front-End Portfolio</p>
+        <h1>Hi, I build clean and useful websites.</h1>
+        <p>
+          This portfolio collects the projects I have built while practicing
+          HTML, CSS, JavaScript, Git, and responsive web design.
+        </p>
+        <a class="button" href="#projects">View projects</a>
+      </div>
+      <img src="images/workspace.svg" alt="Illustration of a laptop workspace">
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <img src="images/memory-game.svg" alt="Memory game project preview">
+          <div>
+            <h3>Memory Game</h3>
+            <p>A browser game where players match cards and try to finish with fewer moves.</p>
+            <p class="tech">HTML, CSS, JavaScript</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/tic-tac-toe.svg" alt="Tic tac toe project preview">
+          <div>
+            <h3>Tic Tac Toe</h3>
+            <p>A simple two-player game that checks turns, wins, and draws in the browser.</p>
+            <p class="tech">HTML, CSS, JavaScript</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/scrolling-game.svg" alt="Scrolling game project preview">
+          <div>
+            <h3>Scrolling Game</h3>
+            <p>An interactive game experiment focused on movement, timing, and keyboard input.</p>
+            <p class="tech">JavaScript, DOM Events, CSS</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Renovatioo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Memory game cards</title>
+  <rect width="640" height="420" fill="#e7f0ea"/>
+  <g fill="#ffffff" stroke="#2d7d8f" stroke-width="8">
+    <rect x="110" y="82" width="110" height="110" rx="12"/>
+    <rect x="265" y="82" width="110" height="110" rx="12"/>
+    <rect x="420" y="82" width="110" height="110" rx="12"/>
+    <rect x="110" y="228" width="110" height="110" rx="12"/>
+    <rect x="265" y="228" width="110" height="110" rx="12"/>
+    <rect x="420" y="228" width="110" height="110" rx="12"/>
+  </g>
+  <circle cx="165" cy="137" r="26" fill="#8fcf9f"/>
+  <circle cx="320" cy="283" r="26" fill="#8fcf9f"/>
+</svg>

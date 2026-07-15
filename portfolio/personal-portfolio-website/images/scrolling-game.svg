@@ -1,0 +1,11 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Scrolling game scene</title>
+  <rect width="640" height="420" fill="#dfeaf2"/>
+  <circle cx="510" cy="82" r="38" fill="#ffd166"/>
+  <rect x="0" y="302" width="640" height="118" fill="#8fcf9f"/>
+  <rect x="88" y="246" width="94" height="56" rx="10" fill="#2d7d8f"/>
+  <circle cx="112" cy="310" r="18" fill="#1d252c"/>
+  <circle cx="160" cy="310" r="18" fill="#1d252c"/>
+  <rect x="300" y="218" width="58" height="84" rx="8" fill="#ffffff"/>
+  <rect x="440" y="190" width="58" height="112" rx="8" fill="#ffffff"/>
+</svg>

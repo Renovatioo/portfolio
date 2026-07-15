@@ -1,0 +1,17 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Tic tac toe board</title>
+  <rect width="640" height="420" fill="#f2e9d8"/>
+  <g stroke="#1d252c" stroke-width="12" stroke-linecap="round">
+    <line x1="246" y1="72" x2="246" y2="348"/>
+    <line x1="394" y1="72" x2="394" y2="348"/>
+    <line x1="182" y1="164" x2="458" y2="164"/>
+    <line x1="182" y1="256" x2="458" y2="256"/>
+  </g>
+  <g stroke="#2d7d8f" stroke-width="12" stroke-linecap="round">
+    <line x1="202" y1="94" x2="226" y2="132"/>
+    <line x1="226" y1="94" x2="202" y2="132"/>
+    <circle cx="320" cy="118" r="26" fill="none"/>
+    <line x1="420" y1="280" x2="444" y2="318"/>
+    <line x1="444" y1="280" x2="420" y2="318"/>
+  </g>
+</svg>

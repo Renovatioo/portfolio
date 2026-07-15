@@ -1,0 +1,11 @@
+<svg width="640" height="480" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Laptop workspace illustration</title>
+  <rect width="640" height="480" fill="#dfe9df"/>
+  <rect x="92" y="114" width="456" height="260" rx="18" fill="#ffffff"/>
+  <rect x="130" y="150" width="380" height="184" rx="8" fill="#1d252c"/>
+  <rect x="164" y="182" width="132" height="16" rx="8" fill="#8fcf9f"/>
+  <rect x="164" y="220" width="286" height="12" rx="6" fill="#f7f5ef"/>
+  <rect x="164" y="250" width="220" height="12" rx="6" fill="#f7f5ef"/>
+  <rect x="218" y="374" width="204" height="28" rx="8" fill="#b5c7c1"/>
+  <circle cx="492" cy="98" r="38" fill="#2d7d8f"/>
+</svg>
